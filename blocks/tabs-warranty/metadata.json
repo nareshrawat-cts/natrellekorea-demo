@@ -1,0 +1,39 @@
+{
+  "variantName": "tabs-warranty",
+  "baseBlock": "tabs",
+  "version": "1.0.0",
+  "created": "2026-08-18T00:00:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.natrellekorea.co.kr/",
+    "originPage": "Natrelle Korea warranty program homepage",
+    "blockPosition": "middle"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "spacious",
+    "purpose": "faq",
+    "imagePattern": "large"
+  },
+  "contentPattern": {
+    "structure": "tab label + rich content panel (headings, paragraphs, lists, banner image, footnotes, Q&A)",
+    "tabCount": 5,
+    "imageCount": 1
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "warranty / support program landing pages",
+      "long-form FAQ pages grouped into topical tabs",
+      "policy or procedure pages with multiple long content sections"
+    ],
+    "notSuitableFor": [
+      "short content that does not need switching",
+      "media galleries (use carousel)",
+      "pages needing all content visible at once (use accordion or default content)"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["/index"],
+    "reuseCount": 1,
+    "lastUsed": "2026-08-18T00:00:00.000Z"
+  }
+}

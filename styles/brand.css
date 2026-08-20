@@ -1,0 +1,34 @@
+/*
+ * brand.css — brand tokens extracted from https://www.natrellekorea.co.kr/
+ * Natrelle Korea (Allergan Aesthetics / AbbVie) warranty program site.
+ */
+
+:root {
+  /* fonts */
+  --heading-font-family: pretendard, "Malgun Gothic", sans-serif;
+  --body-font-family: pretendard, "Malgun Gothic", sans-serif;
+
+  /* colors */
+  --background-color: #fff;
+  --text-color: #666;
+  --heading-color: #222;
+  --link-color: #00abc7;
+  --link-hover-color: #0090a8;
+
+  /* brand */
+  --brand-teal: #00abc7;
+  --brand-teal-dark: #0090a8;
+  --hero-gradient: linear-gradient(135deg, #00abc7 0%, #00c2b8 100%);
+
+  /* spacing */
+  --section-padding: 40px;
+  --nav-height: 64px;
+
+  /* heading sizes (desktop) */
+  --heading-size-xxl: 58px;
+  --heading-size-xl: 36px;
+  --heading-size-l: 28px;
+  --heading-size-m: 22px;
+  --heading-size-s: 20px;
+  --heading-size-xs: 18px;
+}

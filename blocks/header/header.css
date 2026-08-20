@@ -6,6 +6,13 @@ header .nav-wrapper {
   position: fixed;
 }
 
+/* Source site (natrellekorea.co.kr) has no header/navigation bar — the page
+   begins directly with the hero. header.js adds .is-empty when the authored
+   nav has no content, collapsing the header to match the original. */
+header .nav-wrapper.is-empty {
+  display: none;
+}
+
 header nav {
   box-sizing: border-box;
   display: grid;

@@ -1,0 +1,11 @@
+{
+  "type": "da",
+  "sites": {
+    "natrellekorea-demo": {
+      "libraryUrl": "https://main--sta-boilerplate--aemdemos.aem.page/tools/sidekick/library.json",
+      "previewOrg": "nareshrawat-cts",
+      "previewSite": "natrellekorea-demo",
+      "contentHostUrl": "https://content.da.live/nareshrawat-cts/natrellekorea-demo/"
+    }
+  }
+}
