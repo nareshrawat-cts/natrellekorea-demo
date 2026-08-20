@@ -1,0 +1,249 @@
+/* tabs-warranty — pill nav + navy-header white content cards.
+   Values extracted from source #tab_wrap / .menu_wrap on natrellekorea.co.kr. */
+
+.tabs-warranty {
+  --tabs-navy: #163269;                            /* source active-tab / header-bar navy */
+
+  background-color: var(--brand-teal);
+  border-radius: 20px;
+  padding: 20px 12px;
+}
+
+/* --- Pill tab navigation --- */
+.tabs-warranty .tabs-warranty-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  max-width: 100%;
+  margin: 0 0 20px;
+  padding: 0;
+  overflow-x: auto;
+  font-size: 14px;
+}
+
+.tabs-warranty .tabs-warranty-list button.tabs-warranty-tab {
+  flex: 0 0 auto;
+  margin: 0 2px;
+  border: 0;
+  border-radius: 50px;
+  padding: 0 16px;
+  background-color: #fff;
+  color: var(--tabs-navy);
+  font-weight: 400;
+  line-height: 40px;
+  white-space: normal;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.tabs-warranty .tabs-warranty-list button.tabs-warranty-tab p {
+  margin: 0;
+}
+
+.tabs-warranty .tabs-warranty-list button.tabs-warranty-tab[aria-selected='true'] {
+  background-color: var(--tabs-navy);
+  color: #fff;
+  font-weight: 700;
+  cursor: default;
+}
+
+@media (width >= 900px) {
+  .tabs-warranty .tabs-warranty-list {
+    flex-wrap: nowrap;
+    font-size: 18px;
+  }
+
+  .tabs-warranty .tabs-warranty-list button.tabs-warranty-tab {
+    padding: 0 23px;
+    line-height: 54px;
+  }
+}
+
+/* --- Panel card --- */
+.tabs-warranty .tabs-warranty-panel {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background-color: #fff;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.tabs-warranty .tabs-warranty-panel[aria-hidden='true'] {
+  display: none;
+}
+
+.tabs-warranty .tabs-warranty-panel > div {
+  padding: 24px;
+  color: var(--text-color);
+}
+
+@media (width >= 900px) {
+  .tabs-warranty .tabs-warranty-panel > div {
+    padding: 40px 75px;
+  }
+}
+
+/* Navy header bars (one per content section — full-bleed to card edges) */
+.tabs-warranty .tabs-warranty-panel > div h3 {
+  margin: 34px -24px;
+  padding: 24px;
+  background-color: var(--tabs-navy);
+  color: #fff;
+  font-size: 24px;
+  line-height: 1.35;
+  letter-spacing: -0.02em;
+}
+
+.tabs-warranty .tabs-warranty-panel > div > h3:first-child {
+  margin-top: -24px;
+  border-radius: 20px 20px 0 0;
+}
+
+@media (width >= 900px) {
+  .tabs-warranty .tabs-warranty-panel > div h3 {
+    margin: 34px -75px;
+    padding: 32px 75px;
+    font-size: 32px;
+  }
+
+  .tabs-warranty .tabs-warranty-panel > div > h3:first-child {
+    margin-top: -40px;
+  }
+}
+
+/* Panel sub-headings */
+.tabs-warranty .tabs-warranty-panel h4 {
+  color: var(--tabs-navy);
+  font-size: 20px;
+  font-weight: 700;
+}
+
+/* stylelint-disable-next-line no-descending-specificity */
+.tabs-warranty .tabs-warranty-panel p {
+  color: var(--text-color);
+  font-size: 16px;
+}
+
+@media (width >= 900px) {
+  .tabs-warranty .tabs-warranty-panel p {
+    font-size: 18px;
+  }
+}
+
+/* Generic lists inside panels */
+.tabs-warranty .tabs-warranty-panel ul {
+  list-style: none;
+  margin: 0 0 20px;
+  padding: 0;
+}
+
+.tabs-warranty .tabs-warranty-panel li {
+  margin: 0 0 24px;
+}
+
+/* --- Numbered coverage items (li that contains a "click" link) --- */
+.tabs-warranty .tabs-warranty-panel li:has(> p a) {
+  position: relative;
+  min-height: 62px;
+  padding: 0 0 24px 60px;
+  border-bottom: 1px solid #eee;
+}
+
+/* left column: "click" bubble stacked over the numbered circle */
+.tabs-warranty .tabs-warranty-panel li:has(> p a) > p:first-child {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 46px;
+  margin: 0;
+  text-align: center;
+}
+
+.tabs-warranty .tabs-warranty-panel li:has(> p a) > p:first-child a {
+  display: inline-block;
+  margin-bottom: 6px;
+  border: 1px solid var(--brand-teal);
+  border-radius: 50px;
+  padding: 0 8px;
+  background-color: #fff;
+  color: var(--brand-teal);
+  font-size: 12px;
+  line-height: 24px;
+  text-transform: uppercase;
+}
+
+.tabs-warranty .tabs-warranty-panel li:has(> p a) > p:first-child em {
+  display: block;
+  width: 35px;
+  height: 35px;
+  margin: 0 auto;
+  border-radius: 50%;
+  background-color: var(--brand-teal);
+  color: #fff;
+  font-size: 15px;
+  font-weight: 700;
+  font-style: normal;
+  line-height: 35px;
+}
+
+/* category label (second paragraph) */
+.tabs-warranty .tabs-warranty-panel li:has(> p a) > p:nth-child(2) {
+  margin: 0 0 12px;
+  color: var(--tabs-navy);
+  font-size: 20px;
+  font-weight: 700;
+}
+
+/* body lines get a teal check marker */
+.tabs-warranty .tabs-warranty-panel li:has(> p a) > p:nth-child(n+3) {
+  position: relative;
+  margin: 6px 0;
+  padding-left: 22px;
+  color: var(--text-color);
+}
+
+.tabs-warranty .tabs-warranty-panel li:has(> p a) > p:nth-child(n+3)::before {
+  content: '✓' / '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--brand-teal);
+  font-weight: 700;
+}
+
+/* stylelint-disable-next-line no-descending-specificity */
+.tabs-warranty .tabs-warranty-panel li:has(> p a) em:not(:first-child) {
+  color: var(--text-color);
+  font-style: normal;
+}
+
+/* --- FAQ items (li with Q/A markers, no "click" link) --- */
+.tabs-warranty .tabs-warranty-panel li:not(:has(> p a)):has(> p em) {
+  padding: 20px 24px;
+  border-bottom: 1px solid #eee;
+}
+
+.tabs-warranty .tabs-warranty-panel li:not(:has(> p a)) > p:first-child {
+  color: #303030;
+  font-weight: 400;
+}
+
+.tabs-warranty .tabs-warranty-panel li:not(:has(> p a)) > p:first-child em {
+  margin-right: 10px;
+  color: var(--brand-teal);
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 700;
+}
+
+.tabs-warranty .tabs-warranty-panel li:not(:has(> p a)) > p:nth-child(2) em {
+  color: var(--tabs-navy);
+}
+
+/* --- FAQ banner image --- */
+.tabs-warranty .tabs-warranty-panel picture img {
+  width: 100%;
+  border-radius: 20px;
+}

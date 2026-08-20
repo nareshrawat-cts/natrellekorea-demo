@@ -1,0 +1,91 @@
+/* Warranty status lookup widget — matches the rounded pill form on the source hero. */
+
+.warranty-status .warranty-status-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: center;
+  width: 100%;
+  max-width: 730px;
+  margin: 32px auto 48px;
+}
+
+.warranty-status .warranty-status-label {
+  font-size: 20px;
+  font-weight: 600;
+  color: #fff;
+}
+
+.warranty-status .warranty-status-fields {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  background: #fff;
+  border-radius: 80px;
+  padding: 8px 8px 8px 24px;
+  box-shadow: 0 10px 30px rgb(0 0 0 / 8%);
+}
+
+.warranty-status .warranty-status-input {
+  flex: 1 1 0;
+  min-width: 0;
+  height: 54px;
+  padding: 0 16px;
+  border: none;
+  background: transparent;
+  font-family: inherit;
+  font-size: 16px;
+  color: #333;
+}
+
+.warranty-status .warranty-status-input::placeholder {
+  color: #999;
+}
+
+.warranty-status .warranty-status-input:focus {
+  outline: none;
+}
+
+.warranty-status .warranty-status-input + .warranty-status-input {
+  border-left: 1px solid #e5e5e5;
+}
+
+.warranty-status .warranty-status-submit {
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 54px;
+  height: 54px;
+  margin-left: 8px;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background: var(--brand-teal, #00abc7);
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.warranty-status .warranty-status-submit:hover,
+.warranty-status .warranty-status-submit:focus-visible {
+  background: var(--brand-teal-dark, #0090a8);
+  outline: none;
+}
+
+.warranty-status .warranty-status-icon {
+  width: 22px;
+  height: 22px;
+  background-color: #fff;
+
+  /* magnifying-glass icon via mask so it inherits the white color */
+  mask: no-repeat center / contain url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="black" d="M15.5 14h-.79l-.28-.27a6.5 6.5 0 1 0-.7.7l.27.28v.79l5 4.99L20.49 19zm-6 0A4.5 4.5 0 1 1 14 9.5 4.5 4.5 0 0 1 9.5 14z"/></svg>');
+  mask-repeat: no-repeat;
+  mask-position: center;
+  mask-size: contain;
+}
+
+@media (width >= 600px) {
+  .warranty-status .warranty-status-input {
+    font-size: 18px;
+  }
+}

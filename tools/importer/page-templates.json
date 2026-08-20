@@ -1,0 +1,62 @@
+{
+  "metadata": {
+    "projectType": "da"
+  },
+  "templates": [
+    {
+      "name": "homepage",
+      "urls": [
+        "https://www.natrellekorea.co.kr/"
+      ],
+      "coverageGaps": [],
+      "description": "Natrelle Korea homepage — warranty program landing page with a status-lookup form, program details tabs, claim procedures, and footer info",
+      "blocks": [
+        {
+          "name": "section-hero",
+          "instances": [
+            "#contents > div.background"
+          ],
+          "section": "hero-background"
+        },
+        {
+          "name": "widget",
+          "instances": [
+            "#chkForm > div.main-top > dl"
+          ]
+        },
+        {
+          "name": "tabs-warranty",
+          "instances": [
+            "#tab_wrap"
+          ]
+        }
+      ],
+      "sections": [
+        {
+          "id": "rc1",
+          "name": "Hero background",
+          "selector": [
+            "#contents > div.background"
+          ],
+          "style": "hero-background",
+          "blocks": [],
+          "defaultContent": []
+        },
+        {
+          "id": "rc2",
+          "name": "Main content",
+          "selector": [
+            "#tab_wrap"
+          ],
+          "style": null,
+          "blocks": [
+            "tabs-warranty"
+          ],
+          "defaultContent": [
+            "div.basic_in.compad_b > div.tab_content.pointCont > div.tab_in.noticeBox > p.stxt"
+          ]
+        }
+      ]
+    }
+  ]
+}

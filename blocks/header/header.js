@@ -115,14 +115,22 @@ function toggleMenu(nav, navSections, forceExpanded = null) {
 export default async function decorate(block) {
   // load nav as fragment
   const navMeta = getMetadata('nav');
-  const navPath = navMeta ? new URL(navMeta, window.location).pathname : '/nav';
-  const fragment = await loadFragment(navPath);
+  let navPath = navMeta ? new URL(navMeta, window.location).pathname : '/nav';
+  // This DA project serves authored content under /content. Fall back to the
+  // /content-prefixed path when the default location isn't published.
+  let fragment = await loadFragment(navPath);
+  if (!fragment && !navMeta) {
+    navPath = '/content/nav';
+    fragment = await loadFragment(navPath);
+  }
 
   // decorate nav DOM
   block.textContent = '';
   const nav = document.createElement('nav');
   nav.id = 'nav';
-  while (fragment.firstElementChild) nav.append(fragment.firstElementChild);
+  if (fragment) {
+    while (fragment.firstElementChild) nav.append(fragment.firstElementChild);
+  }
 
   const classes = ['brand', 'sections', 'tools'];
   classes.forEach((c, i) => {
@@ -168,4 +176,13 @@ export default async function decorate(block) {
   navWrapper.className = 'nav-wrapper';
   navWrapper.append(nav);
   block.append(navWrapper);
+
+  // The source site has no header/navigation. When the authored nav has no
+  // brand, sections, or tools content, collapse the header entirely so the
+  // migrated layout matches the original (hero starts at the top of the page).
+  const hasNavContent = !!nav.querySelector('.nav-brand a, .nav-sections a, .nav-sections li, .nav-tools a');
+  if (!hasNavContent) {
+    navWrapper.classList.add('is-empty');
+    block.closest('header')?.classList.add('nav-empty');
+  }
 }

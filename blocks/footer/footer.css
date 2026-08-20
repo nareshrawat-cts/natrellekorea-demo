@@ -1,20 +1,89 @@
+/* Footer — matches natrellekorea.co.kr source: white bg, grey text,
+   company-info row (logo + details) and a legal bottom row with a top divider. */
+
 footer {
-  background-color: var(--light-color);
-  font-size: var(--body-font-size-xs);
+  background-color: #fff;
+  color: #666;
+  font-size: 15px;
+  line-height: 1.6;
 }
 
 footer .footer > div {
   margin: auto;
   max-width: 1200px;
-  padding: 40px 24px 24px;
+  padding: 0 24px;
+}
+
+footer .footer {
+  padding: 48px 0 56px;
 }
 
 footer .footer p {
   margin: 0;
 }
 
+/* company-info row: logo left, company + contact details */
+footer .footer .footer-info {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+footer .footer .footer-info .footer-logo {
+  margin-bottom: 8px;
+}
+
+footer .footer .footer-info .footer-logo img {
+  width: 200px;
+  height: auto;
+}
+
+/* legal bottom row: disclaimer, cookie notice, links, copyright */
+footer .footer .footer-legal {
+  margin-top: 32px;
+  padding-top: 32px;
+  border-top: 1px solid rgb(34 34 34 / 20%);
+  font-size: 13px;
+  color: #888;
+}
+
+footer .footer .footer-legal p {
+  margin: 0 0 8px;
+}
+
+footer .footer .footer-legal a {
+  color: #666;
+  text-decoration: none;
+  margin-right: 16px;
+}
+
+footer .footer .footer-legal a:hover {
+  color: var(--brand-teal, #00abc7);
+  text-decoration: underline;
+}
+
 @media (width >= 900px) {
+  footer .footer {
+    padding: 60px 0 80px;
+  }
+
   footer .footer > div {
-    padding: 40px 32px 24px;
+    padding: 0 39px;
+  }
+
+  /* logo and details side by side on desktop, matching source flex layout */
+  footer .footer .footer-info {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 64px;
+  }
+
+  footer .footer .footer-info .footer-logo {
+    flex: 0 0 auto;
+    margin-bottom: 0;
+  }
+
+  footer .footer .footer-info .footer-logo img {
+    width: 240px;
   }
 }
