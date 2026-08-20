@@ -60,7 +60,10 @@
 body {
   display: none;
   margin: 0;
-  background-color: var(--background-color);
+
+  /* source site (natrellekorea.co.kr) uses a solid brand-teal page background;
+     white content panels sit over it */
+  background-color: var(--brand-teal);
   color: var(--text-color);
   font-family: var(--body-font-family);
   font-size: var(--body-font-size-m);
@@ -365,4 +368,33 @@ main .section.hero-background h6 {
 
 main .section.hero-background a:any-link {
   color: #fff;
+}
+
+/* the warranty menu (5 items) renders as a default-content <ul>; on the source
+   it is a horizontal single-line menu, not a bulleted vertical list */
+main .section.hero-background ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px 32px;
+  margin: 24px 0 8px;
+  padding: 0;
+  list-style: none;
+}
+
+main .section.hero-background ul li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+main .section.hero-background ul li a:any-link {
+  color: #fff;
+  text-decoration: none;
+}
+
+main .section.hero-background ul li a:hover {
+  text-decoration: underline;
 }
